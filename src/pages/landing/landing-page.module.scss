@@ -1,0 +1,22 @@
+@use '@shared/styles/mixins' as *;
+@use '@shared/styles/colors' as *;
+@use '@shared/styles/typography' as *;
+
+.container {
+  @include flex(column, center, center);
+}
+
+.section {
+  max-width: 900px;
+}
+
+@include mobile {
+  .container {
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .section {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+@use '@shared/styles/mixins' as *;
+@use '@shared/styles/colors' as *;
+@use '@shared/styles/typography' as *;
+
+.cardsSection {
+  @include flex(column, center, center);
+  text-align: center;
+  padding: 20px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .cardsSectionTitle {
+    @include text(var(--font-size-xxl), var(--font-weight-bold), var(--color-dark-500));
+    margin-bottom: 24px;
+  }
+
+  .cardsContainer {
+    @include flex(row, center, center, 20px);
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
+
+@include mobile {
+  .cardsSection {
+    padding: 15px 15px;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}

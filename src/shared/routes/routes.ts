@@ -9,4 +9,9 @@ export const routes = {
     path: '/random-post',
     linkText: 'Рандомный пост',
   },
+  landing: {
+    getLink: () => '/landing',
+    path: '/landing',
+    linkText: 'Лендинг',
+  },
 };

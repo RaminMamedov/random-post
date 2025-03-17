@@ -1,0 +1,39 @@
+@use '@shared/styles/mixins' as *;
+@use '@shared/styles/colors' as *;
+@use '@shared/styles/typography' as *;
+
+.introductionSection {
+  @include flex(column, center, center);
+  text-align: center;
+  padding: 20px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .introductionSectionTitle {
+    @include text(var(--font-size-xxxl), var(--font-weight-bold), var(--color-accent-500));
+    margin-bottom: 16px;
+  }
+
+  .introductionSectionText {
+    @include text(var(--font-size-m), var(--font-weight-regular), var(--color-dark-500));
+    margin-bottom: 24px;
+  }
+
+  .introductionSectionButton {
+    text-decoration: none;
+  }
+}
+
+@include mobile {
+  .introductionSection {
+    padding: 15px 15px;
+  }
+
+  .introductionSectionTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .introductionSectionText {
+    font-size: var(--font-size-s);
+  }
+}

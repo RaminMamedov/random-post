@@ -1,10 +1,33 @@
+@use '@shared/styles/mixins' as *;
+@use '@shared/styles/colors' as *;
+@use '@shared/styles/typography' as *;
+
 .notFoundPage {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
+  @include flex(column, center, center, 20px);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   text-align: center;
+}
+
+.notFoundHeader {
+  @include text(var(--font-size-xxxl), var(--font-weight-bold), var(--color-dark-500));
+}
+
+.notFoundText {
+  @include text(var(--font-size-m), var(--font-weight-regular), var(--color-dark-300));
+  max-width: 600px;
+}
+
+@include mobile {
+  .notFoundPage {
+    padding: 10px;
+  }
+
+  .notFoundHeader {
+    font-size: var(--font-size-xl);
+  }
+
+  .notFoundText {
+    font-size: var(--font-size-s);
+  }
 }

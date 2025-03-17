@@ -1,0 +1,76 @@
+@use 'colors' as *;
+@use 'typography' as *;
+
+// Центрирование по центру (гибкое)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Гибкое выравнивание с направлением и отступами
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Кнопки (с использованием CSS-переменных)
+@mixin button-style($bg-color: var(--color-accent-500), $text-color: var(--color-light-100)) {
+  background: $bg-color;
+  color: $text-color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--color-accent-700);
+  }
+}
+
+// Текстовые стили
+@mixin text($size: var(--font-size-m), $weight: var(--font-weight-regular), $color: var(--color-dark-500)) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+// Контейнер с адаптивными отступами
+@mixin container($max-width: 1200px, $padding: 16px) {
+  width: 100%;
+  max-width: $max-width;
+  padding-left: $padding;
+  padding-right: $padding;
+  margin: 0 auto;
+}
+
+// Медиа-запросы (адаптив)
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+// Тени
+@mixin box-shadow($color: rgba(0, 0, 0, 0.1), $size: 0 2px 4px) {
+  box-shadow: $size $color;
+}
