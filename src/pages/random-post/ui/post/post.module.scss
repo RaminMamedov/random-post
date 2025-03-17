@@ -1,26 +1,39 @@
+@use '@shared/styles/mixins' as *;
+@use '@shared/styles/colors' as *;
+@use '@shared/styles/typography' as *;
+
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex(column, center, center);
   margin-top: 20px;
   padding: 20px;
   max-width: 600px;
-  background-color: #f9f9f9;
+  background-color: var(--color-light-300);
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @include box-shadow(var(--color-dark-100), 0 4px 6px);
   text-align: center;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: bold;
+  @include text(var(--font-size-xxl), var(--font-weight-bold), var(--color-dark-500));
   margin-bottom: 10px;
-  color: #333;
 }
 
 .content {
-  font-size: 18px;
-  color: #555;
+  @include text(var(--font-size-l), var(--font-weight-regular), var(--color-dark-300));
   padding: 10px;
+}
+
+@include mobile {
+  .container {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .content {
+    font-size: var(--font-size-m);
+  }
 }

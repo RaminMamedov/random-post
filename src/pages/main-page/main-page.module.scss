@@ -1,21 +1,33 @@
+@use '@shared/styles/mixins' as *;
+@use '@shared/styles/colors' as *;
+@use '@shared/styles/typography' as *;
+
 .mainPageContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex(column, center, center);
   text-align: center;
   padding: 20px;
+}
+
+.mainPageHeader {
+  @include text(var(--font-size-xxxl), var(--font-weight-bold), var(--color-dark-500));
+  margin-bottom: 10px;
+}
+
+.mainPageText {
+  @include text(var(--font-size-m), var(--font-weight-regular), var(--color-dark-300));
+  max-width: 800px;
+}
+
+@include mobile {
+  .mainPageContainer {
+    padding: 10px;
+  }
 
   .mainPageHeader {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: var(--font-size-xl);
   }
 
   .mainPageText {
-    font-size: 16px;
-    color: #555;
-    max-width: 800px;
+    font-size: var(--font-size-s);
   }
 }

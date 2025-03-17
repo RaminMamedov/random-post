@@ -4,6 +4,7 @@ import RandomPostPage from '../pages/random-post/ui/random-post-page.tsx';
 import Layout from '@shared/ui/layout/layout.tsx';
 import NotFoundPage from '../pages/not-found-page/not-found-page.tsx';
 import { routes } from '@shared/routes';
+import LandingPage from '@pages/landing/landing-page.tsx';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path={routes.main.path} element={<Layout />}>
         <Route index element={<MainPage />} />
         <Route path={routes.randomPost.path} element={<RandomPostPage />} />
+        <Route path={routes.landing.path} element={<LandingPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

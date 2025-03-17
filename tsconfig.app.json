@@ -28,6 +28,7 @@
     "paths": {
       "@public/*": ["./public/*"],
       "@app/*": ["./src/app/*"],
+      "@assets/*": ["./src/assets/*"],
       "@views/*": ["./src/views/*"],
       "@widgets/*": ["./src/widgets/*"],
       "@features/*": ["./src/features/*"],
@@ -35,8 +36,6 @@
       "@pages/*": ["./src/pages/*"],
       "@shared/*": ["./src/shared/*"]
     },
-
-    "types": ["node"]
   },
   "include": ["src"]
 }

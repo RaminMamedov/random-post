@@ -1,26 +1,44 @@
+@use '@shared/styles/mixins' as *;
+@use '@shared/styles/colors' as *;
+@use '@shared/styles/typography' as *;
+
 .header {
-  padding: 4px;
-  background-color: #f5f5f5;
-  width: 100%;
-  margin-bottom: 20px;
+  padding: 6px 12px;
+  background-color: var(--color-light-300);
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px var(--color-dark-100);
 }
 
-.container {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
+.headerContainer {
+  @include flex(row, space-between, center, 12px);
   height: 100%;
+  max-width: 100%;
+  padding: 0 40px;
 }
 
 .navLink {
-  color: black;
+  color: var(--color-dark-500);
   text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-s);
+  padding: 6px 8px;
   transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--color-accent-500);
+  }
 }
 
-.navLink:hover {
-  color: #555;
+@include mobile {
+  .headerContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .navLink {
+    font-size: var(--font-size-xs);
+    padding: 4px 6px;
+  }
 }

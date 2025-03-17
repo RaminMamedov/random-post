@@ -1,11 +1,13 @@
-import styles from './Loader.module.css';
+import styles from './loader.module.scss';
+import classNames from 'classnames';
 
-const Loader = () => {
-  return (
-    <div className={styles.loaderContainer}>
-      <div className={styles.loader}></div>
-    </div>
-  );
+type LoaderProps = {
+  size?: 'small' | 'medium' | 'large';
+  className?: string;
+};
+
+const Loader = ({ size = 'medium', className }: LoaderProps) => {
+  return <div className={classNames(styles.loader, styles[size], className)} />;
 };
 
 export default Loader;
