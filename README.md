@@ -1,48 +1,54 @@
-# Тестовое приложение: Просмотр случайных постов
+# React + TypeScript + Vite
 
-Это фронтенд-приложение, разработанное с использованием **React + Vite**, которое позволяет получать и отображать случайные посты из **JSONPlaceholder API**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Функционал
+Currently, two official plugins are available:
 
-- **Маршрутизация**: Реализованы две страницы:
-    - Главная (`/`)
-    - Страница случайного поста (`/random-post`)
-- **Загрузка данных**: Данные получаются с удаленного API с возможностью прерывания запроса.
-- **Навигация**: В шапке сайта можно переключаться между страницами.
-- **Линтинг и стилизация**: Настроены **ESLint**, **Stylelint** и **Prettier**.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Используемые технологии
+## Expanding the ESLint configuration
 
-### **Основной стек**
-- [React 19](https://react.dev/) – библиотека для разработки интерфейсов.
-- [TypeScript](https://www.typescriptlang.org/) – статическая типизация.
-- [Vite](https://vitejs.dev/) – быстрый сборщик.
-- [React Router v7](https://reactrouter.com/) – маршрутизация.
-- [Axios](https://axios-http.com/) – работа с HTTP-запросами.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### **Стилизация**
-- [CSS Modules (SCSS)](https://github.com/css-modules/css-modules) – модульные стили.
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-### **Качество кода**
-- [ESLint](https://eslint.org/) – анализ кода.
-- [Prettier](https://prettier.io/) – автоформатирование.
-- [Stylelint](https://stylelint.io/) – линтинг SCSS.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## Архитектура проекта
-Проект написан в соответствии с методологией Feature-Sliced Design
-Ссылка на документацию - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-----
-
-## Установка
-Чтобы начать работать с проектом, выполните следующие шаги:
-1. Клонируйте репозиторий:
-   ```bash
-   git clone <URL репозитория>
-2. Установите зависимости:
-    ```bash
-   yarn install
-3. Для запуска проекта в режиме разработки используйте команду:
-    ```bash
-   yarn run dev
-Приложение будет доступно по адресу http://localhost:5173
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```

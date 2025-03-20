@@ -1,54 +1,29 @@
 {
   "name": "lesson-2",
   "private": true,
-  "homepage": "https://RaminMamedov.github.io/random-post",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist",
-    "preview": "vite preview",
-    "eslint": "eslint",
-    "eslint:fix": "yarn eslint --fix",
-    "stylelint": "stylelint --allow-empty-input \"**/*.{css,scss}\"",
-    "stylelint:fix": "yarn stylelint --fix",
-    "type-check": "tsc --noEmit",
-    "lint": "yarn type-check && yarn eslint && yarn stylelint"
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.8.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.3.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
+    "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@typescript-eslint/eslint-plugin": "^8.26.0",
-    "@typescript-eslint/parser": "^8.26.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.22.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.2.3",
-    "eslint-plugin-react": "^7.37.4",
+    "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "gh-pages": "^6.3.0",
-    "globals": "^16.0.0",
-    "prettier": "^3.5.3",
-    "sass": "^1.85.1",
-    "stylelint": "^16.15.0",
-    "stylelint-config-prettier-scss": "^1.0.0",
-    "stylelint-config-recess-order": "^6.0.0",
-    "stylelint-config-standard": "^37.0.0",
-    "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-order": "^6.0.4",
+    "globals": "^15.15.0",
     "typescript": "~5.7.2",
-    "typescript-eslint": "^8.26.0",
+    "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
   }
 }
