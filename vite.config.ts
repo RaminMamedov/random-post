@@ -17,4 +17,9 @@ export default defineConfig({
       '@pages': '/src/pages',
     },
   },
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    },
+  },
 });

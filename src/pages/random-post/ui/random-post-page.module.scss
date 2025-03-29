@@ -4,36 +4,41 @@
 
 .container {
   @include flex(column, center, center, 20px);
+
   text-align: center;
 }
 
-.postTitle {
+.post-title {
   @include text(var(--font-size-xxxl), var(--font-weight-bold), var(--color-dark-500));
+
   margin-bottom: 20px;
 }
 
-.randomPostPageButton {
+.random-post-page-button {
   @include button-style(var(--color-accent-500), var(--color-light-100));
-  font-size: var(--font-size-m);
+
   padding: 10px 20px;
+  font-size: var(--font-size-m);
 
   &:hover {
     opacity: 0.8;
   }
 
   &:disabled {
-    background-color: var(--color-dark-300);
     cursor: not-allowed;
+    background-color: var(--color-dark-300);
   }
 }
 
 .error {
   @include text(var(--font-size-m), var(--font-weight-medium), var(--color-danger-500));
+
   margin-top: 10px;
 }
 
 .title {
   @include text(var(--font-size-l), var(--font-weight-bold), var(--color-dark-300));
+
   margin-top: 15px;
 }
 
@@ -42,7 +47,7 @@
     padding: 10px;
   }
 
-  .postTitle {
+  .post-title {
     font-size: var(--font-size-xl);
   }
 

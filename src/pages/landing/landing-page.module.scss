@@ -8,12 +8,13 @@
 
 .section {
   max-width: 900px;
+  width: 100%;
 }
 
 @include mobile {
   .container {
-    padding: 20px 15px;
     gap: 20px;
+    padding: 20px 15px;
   }
 
   .section {

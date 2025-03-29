@@ -2,32 +2,35 @@
 @use '@shared/styles/colors' as *;
 @use '@shared/styles/typography' as *;
 
-.mainPageContainer {
+.main-page-container {
   @include flex(column, center, center);
-  text-align: center;
+
   padding: 20px;
+  text-align: center;
 }
 
-.mainPageHeader {
+.main-page-header {
   @include text(var(--font-size-xxxl), var(--font-weight-bold), var(--color-dark-500));
+
   margin-bottom: 10px;
 }
 
-.mainPageText {
+.main-page-text {
   @include text(var(--font-size-m), var(--font-weight-regular), var(--color-dark-300));
+
   max-width: 800px;
 }
 
 @include mobile {
-  .mainPageContainer {
+  .main-page-container {
     padding: 10px;
   }
 
-  .mainPageHeader {
+  .main-page-header {
     font-size: var(--font-size-xl);
   }
 
-  .mainPageText {
+  .main-page-text {
     font-size: var(--font-size-s);
   }
 }

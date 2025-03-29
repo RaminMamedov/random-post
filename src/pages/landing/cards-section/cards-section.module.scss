@@ -2,31 +2,34 @@
 @use '@shared/styles/colors' as *;
 @use '@shared/styles/typography' as *;
 
-.cardsSection {
+.cards-section {
   @include flex(column, center, center);
-  text-align: center;
-  padding: 20px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
 
-  .cardsSectionTitle {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+
+  .cards-section-title {
     @include text(var(--font-size-xxl), var(--font-weight-bold), var(--color-dark-500));
+
     margin-bottom: 24px;
   }
 
-  .cardsContainer {
+  .cards-container {
     @include flex(row, center, center, 20px);
+
     flex-wrap: wrap;
     max-width: 100%;
   }
 }
 
 @include mobile {
-  .cardsSection {
-    padding: 15px 15px;
+  .cards-section {
+    padding: 15px;
   }
 
-  .cardsContainer {
+  .cards-container {
     flex-direction: column;
     align-items: center;
   }

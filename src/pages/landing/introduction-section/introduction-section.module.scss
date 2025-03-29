@@ -2,38 +2,41 @@
 @use '@shared/styles/colors' as *;
 @use '@shared/styles/typography' as *;
 
-.introductionSection {
+.introduction-section {
   @include flex(column, center, center);
-  text-align: center;
-  padding: 20px 20px;
-  max-width: 800px;
-  margin: 0 auto;
 
-  .introductionSectionTitle {
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+
+  .introduction-section-title {
     @include text(var(--font-size-xxxl), var(--font-weight-bold), var(--color-accent-500));
+
     margin-bottom: 16px;
   }
 
-  .introductionSectionText {
+  .introduction-section-text {
     @include text(var(--font-size-m), var(--font-weight-regular), var(--color-dark-500));
+
     margin-bottom: 24px;
   }
 
-  .introductionSectionButton {
+  .introduction-section-button {
     text-decoration: none;
   }
 }
 
 @include mobile {
-  .introductionSection {
-    padding: 15px 15px;
+  .introduction-section {
+    padding: 15px;
   }
 
-  .introductionSectionTitle {
+  .introduction-section-title {
     font-size: var(--font-size-xl);
   }
 
-  .introductionSectionText {
+  .introduction-section-text {
     font-size: var(--font-size-s);
   }
 }

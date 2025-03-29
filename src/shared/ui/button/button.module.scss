@@ -4,46 +4,47 @@
 
 .button {
   @include button-style(var(--color-accent-500), var(--color-light-100));
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-medium);
-  padding: 12px 18px;
-  border-radius: 8px;
+
+  position: relative;
   display: inline-flex;
+  gap: 8px;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  transition: background 0.3s ease-in-out;
   min-width: 180px;
-  position: relative;
+  padding: 12px 18px;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
 
   &:hover {
     background: var(--color-accent-700);
   }
 
   &:disabled {
-    background: var(--color-light-700);
     cursor: not-allowed;
+    background: var(--color-light-700);
   }
 
-  .valueBox {
+  .value-box {
     display: flex;
-    align-items: center;
     gap: 8px;
+    align-items: center;
     justify-content: center;
     transition: opacity 0.2s ease-in-out;
   }
 
   &.loading {
-    .valueBox {
-      opacity: 0;
+    .value-box {
       position: absolute;
+      opacity: 0;
     }
 
     .loader {
-      visibility: visible;
       position: absolute;
-      left: 50%;
       top: 50%;
+      left: 50%;
+      visibility: visible;
       transform: translate(-50%, -50%);
     }
   }
@@ -62,9 +63,9 @@
 }
 
 .outline {
+  color: var(--color-accent-500);
   background: transparent;
   border: 2px solid var(--color-accent-500);
-  color: var(--color-accent-500);
 
   &:hover {
     background: var(--color-accent-100);
@@ -72,25 +73,25 @@
 }
 
 .link {
-  background: none;
-  color: var(--color-accent-500);
   padding: 0;
   font-weight: var(--font-weight-medium);
+  color: var(--color-accent-500);
   text-decoration: underline;
   cursor: pointer;
+  background: none;
 
   &:hover {
     color: var(--color-accent-700);
   }
 }
 
-.fullWidth {
+.full-width {
   width: 100%;
 }
 
-.asLink {
-  text-decoration: none;
+.as-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
