@@ -17,6 +17,10 @@ const Header = () => {
         <Link to={routes.landing.getLink()} className={styles.navLink}>
           {routes.landing.linkText}
         </Link>
+        {' | '}
+        <Link to={routes.navigation.getLink()} className={styles.navLink}>
+          {routes.navigation.linkText}
+        </Link>
       </nav>
     </header>
   );
