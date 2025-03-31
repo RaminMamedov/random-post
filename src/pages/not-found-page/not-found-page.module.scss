@@ -2,32 +2,34 @@
 @use '@shared/styles/colors' as *;
 @use '@shared/styles/typography' as *;
 
-.notFoundPage {
+.not-found-page {
   @include flex(column, center, center, 20px);
+
   width: 100%;
   height: 100vh;
   text-align: center;
 }
 
-.notFoundHeader {
+.not-found-header {
   @include text(var(--font-size-xxxl), var(--font-weight-bold), var(--color-dark-500));
 }
 
-.notFoundText {
+.not-found-text {
   @include text(var(--font-size-m), var(--font-weight-regular), var(--color-dark-300));
+
   max-width: 600px;
 }
 
 @include mobile {
-  .notFoundPage {
+  .not-found-page {
     padding: 10px;
   }
 
-  .notFoundHeader {
+  .not-found-header {
     font-size: var(--font-size-xl);
   }
 
-  .notFoundText {
+  .not-found-text {
     font-size: var(--font-size-s);
   }
 }

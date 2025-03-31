@@ -2,34 +2,34 @@
 @use '@shared/styles/colors' as *;
 @use '@shared/styles/typography' as *;
 
-.interactiveSection {
+.interactive-section {
   @include flex(column, center, center);
-  padding: 20px 20px;
+
   width: 100%;
   text-align: center;
 
-  .interactiveSectionTitle {
+  .interactive-section-title {
     @include text(var(--font-size-xl), var(--font-weight-bold), var(--color-dark-500));
+
     margin-bottom: 16px;
   }
 
-  .interactiveSectionForm {
+  .interactive-section-form {
     @include flex(column, center, center);
+
     width: 100%;
   }
 
-  .interactiveSectionInput {
+  .interactive-section-input {
+    box-sizing: border-box;
+    width: 100%;
     max-width: 300px;
     margin-bottom: 30px;
   }
 }
 
 @include mobile {
-  .interactiveSection {
-    padding: 15px 15px;
-  }
-
-  .interactiveSectionForm {
+  .interactive-section-form {
     width: 100%;
   }
 }

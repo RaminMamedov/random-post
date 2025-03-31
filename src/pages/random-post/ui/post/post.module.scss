@@ -4,29 +4,32 @@
 
 .container {
   @include flex(column, center, center);
-  margin-top: 20px;
-  padding: 20px;
+
   max-width: 600px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
   background-color: var(--color-light-300);
   border-radius: 10px;
   @include box-shadow(var(--color-dark-100), 0 4px 6px);
-  text-align: center;
 }
 
 .title {
   @include text(var(--font-size-xxl), var(--font-weight-bold), var(--color-dark-500));
+
   margin-bottom: 10px;
 }
 
 .content {
   @include text(var(--font-size-l), var(--font-weight-regular), var(--color-dark-300));
+
   padding: 10px;
 }
 
 @include mobile {
   .container {
-    padding: 15px;
     max-width: 90%;
+    padding: 15px;
   }
 
   .title {

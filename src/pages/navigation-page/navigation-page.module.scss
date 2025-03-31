@@ -1,0 +1,59 @@
+@use '@shared/styles/mixins' as *;
+@use '@shared/styles/colors' as *;
+@use '@shared/styles/typography' as *;
+
+.navigation-page {
+  @include flex(column, flex-start, flex-start);
+  padding: 20px;
+
+  h1 {
+    @include text(var(--font-size-xxxl), var(--font-weight-bold), var(--color-dark-500));
+    margin-bottom: 20px;
+  }
+
+  .level-1 {
+    margin-bottom: 24px;
+
+    h2 {
+      @include text(var(--font-size-xl), var(--font-weight-medium), var(--color-dark-400));
+    }
+  }
+
+  .level-2 {
+    padding-left: 20px;
+
+    h3 {
+      @include text(var(--font-size-l), var(--font-weight-regular), var(--color-dark-400));
+    }
+
+    ul {
+      padding-left: 20px;
+
+      li {
+        margin: 6px 0;
+        a {
+          color: var(--color-primary);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .navigation-page {
+    padding: 10px;
+
+    h1 {
+      font-size: var(--font-size-xl);
+    }
+
+    .level-2 ul li a {
+      font-size: var(--font-size-s);
+    }
+  }
+}

@@ -2,9 +2,10 @@
 @use '@shared/styles/colors' as *;
 @use '@shared/styles/typography' as *;
 
-.mainLayout {
+.main-layout {
   @include flex(column, center, center);
+
   padding: 20px;
-  background-color: var(--color-light-100);
   color: var(--color-dark-500);
+  background-color: var(--color-light-100);
 }
